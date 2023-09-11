@@ -1,0 +1,111 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0, auto;
+    padding: 0px;
+}
+
+body {
+    text-align: center;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    margin:0, auto;
+    padding: 0px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.nav-wrapper {
+    width: 100%;
+    height: 102px;
+    background: #161616;
+}
+
+nav {
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    padding-top: 25px;
+    height: 50px;
+}
+
+.hover-this {
+    transition: all 0.5s ease;
+}
+
+span {
+    display: inline-block;
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: #fff;
+    font-size: 48px;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.cursor {
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    position: fixed;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 10%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(6);
+}
+
+@media(min-width: 100vh) {
+    nav {
+          display: flex;
+          justify-content: space-evenly;
+    }
+}
+
+@media(max-width: 100vh) {
+    nav {
+          top:30%;
+    }
+
+    .hover-this {
+          width: 50%;
+          padding: 0px;
+          display: inline-block;
+    }
+}
+
+main {
+    max-width: 100%;
+    margin: 0, auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    height: 100vh;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: default;
+}
+
+.button:hover {
+    background-color: #555;
+}
