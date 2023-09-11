@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="app.js"></script>
 </head>
 <body>
     <header>
@@ -13,44 +14,82 @@
             <nav>
                 <a href="index.html" class="hover-this"><span>About Me</span></a>
                 <a href="projects.html" class="hover-this"><span>Projects</span></a>
+                <a href="contact.html" class="hover-this"><span>Contact</span></a>
                 <div class="cursor"></div>
             </nav>
-        </div>
         <script>
             (function () {
-                  const link = document.querySelectorAll('nav > .hover-this');
-                  const cursor = document.querySelector('.cursor');
+            const link = document.querySelectorAll('nav > .hover-this');
+            const cursor = document.querySelector('.cursor');
 
-                  const animateit = function (e) {
-                        const span = this.querySelector('span');
-                        const { offsetX: x, offsetY: y } = e,
-                        { offsetWidth: width, offsetHeight: height } = this,
+            const animateit = function (e) {
+            const span = this.querySelector('span');
+            const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
 
-                        move = 25,
-                        xMove = x / width * (move * 2) - move,
-                        yMove = y / height * (move * 2) - move;
+            move = 25,
+            xMove = x / width * (move * 2) - move,
+            yMove = y / height * (move * 2) - move;
 
-                        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
-                        if (e.type === 'mouseleave') span.style.transform = '';
-                  };
+            if (e.type === 'mouseleave') span.style.transform = '';
+      };
 
-                  const editCursor = e => {
-                        const { clientX: x, clientY: y } = e;
-                        cursor.style.left = x + 'px';
-                        cursor.style.top = y + 'px';
-                  };
+      const editCursor = e => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+      };
 
-                  link.forEach(b => b.addEventListener('mousemove', animateit));
-                  link.forEach(b => b.addEventListener('mouseleave', animateit));
-                  window.addEventListener('mousemove', editCursor);
-            })();
+      link.forEach(b => b.addEventListener('mousemove', animateit));
+      link.forEach(b => b.addEventListener('mouseleave', animateit));
+      window.addEventListener('mousemove', editCursor);
+      })();
             </script>
+        </div>
     </header>
     <main>
-        <h1>Hello.</h1>
-        <p>This is the main page of my blog.</p>
-        <a href="projects.html" class="button">Go to My Projects</a>
+        <div class="grid-container">
+            <article class="featured">
+                <img src="img/img.jpg">
+                <div><h2>Hello & Welcome</h2>
+                    <p>A little about me - my name is Yung and I am from New England (USA). I currently work full time as a pharmacist and am a Program Manager at an independent pharmacy business. Having worked in healthcare for so many years, my focus started with patient care and is now branching more into workflow,  operations, compliance, and business management. My interest in technology and more specifically coding, stems from the operations viewpoint of using the technology available to increase efficiency and automation opportunities within our day to day work. While I am not pursuing coding as a means of changing careers, I do feel there is absolutely nothing to loose when it comes to having more knowledge for today's everchanging landscape. At my current work setting, I often contact for new technology implementation role outs. I have definitely felt frustrated before in trying to request changes or work with support teams and I believe that learning more about coding will help me better understand not only the issue at hand but more effective approaches to reach a solution.</p>
+                </div>
+            </article>
+            <article class="links">
+                <div>
+                    <h3>Visit</h3>
+                    <a href="https://www.linkedin.com/in/yung-en-fung-93651319" class="button1">LinkedIn</a>
+                    <a href="https://github.com/yfung8" class="button1">GitHub</a>
+                    <a href="https://danafarber.jimmyfund.org/site/SPageServer/?pagename=agda_danafarber_cancer_donation2&utm_source=google&utm_medium=cpc&utm_campaign=AGDA101722C&s_src=AGDA101722C&s_subsrc=AGDA101722C&gad=1&gclid=Cj0KCQjw9fqnBhDSARIsAHlcQYQqbgTT9dXjDi4T4VUvE1RYMAIx8gUr3uW8SKzMBTba8jT83A4w8mkaAojtEALw_wcB" class="button1">Donate!</a>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/p_2yoMlqpZs?si=esARjJIwM_VLKm0-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </article>
+        </div>
+        <p></p>
+        <p></p>
+        <a href="#top">Return to Top</a>
+        <script>
+            let mybutton = document.getElementById("myBtn");
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+            } else {
+            mybutton.style.display = "none";
+            }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}</script>
+<p></p>
+<p></p>
     </main>
 </body>
 </html>
